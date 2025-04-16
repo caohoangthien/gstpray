@@ -14343,6 +14343,28 @@ var zL = Object.defineProperty
                     $(".blink").remove();
                     $("<span class='blink'>Mong ước " + val_mongmuon + " của " + val_ten + " đã được gửi!</span>").insertAfter("button");
 
+
+                    const numClouds = 15;
+                    // let inputValue = document.getElementById("wish").value;
+                    for (let i = 0; i < numClouds; i++) {
+                      const cloud = document.createElement('div');
+                      cloud.className = 'cloud';
+                      cloud.textContent = "A Di Đà Phật !";
+
+                      // Vị trí top ngẫu nhiên
+                      cloud.style.top = Math.random() * 80 + 'vh';
+                      // Kích thước ngẫu nhiên
+                      const size = 240 + Math.random() * 60;
+                      cloud.style.width = size + 'px';
+                      cloud.style.height = (size * 0.6) + 'px';
+                      // Thời gian bay ngẫu nhiên
+                      const duration = 20 + Math.random() * 20;
+                      cloud.style.animationDuration = duration + 's';
+                      // Trễ ngẫu nhiên để tạo hiệu ứng liên tục
+                      cloud.style.animationDelay = (-Math.random() * duration) + 's';
+                      document.body.appendChild(cloud);
+                    }
+
                 }
                 setSession() {
                     sessionStorage.setItem("PRAY", "Isvalid")

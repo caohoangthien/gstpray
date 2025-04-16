@@ -12,3 +12,27 @@
     -ms-user-select: none;
     user-select: none
 }
+
+.cloud {
+      position: absolute;
+      background: url('./img/cloud.png') no-repeat center center;
+      background-size: contain;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-weight: bold;
+      font-size: 18px;
+      opacity: 0.9;
+      animation: float linear infinite;
+      pointer-events: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(-150px);
+  }
+  100% {
+    transform: translateX(110vw);
+  }
+}
