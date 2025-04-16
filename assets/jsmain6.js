@@ -14344,7 +14344,7 @@ var zL = Object.defineProperty
                     $("<span class='blink'>Mong ước " + val_mongmuon + " của " + val_ten + " đã được gửi!</span>").insertAfter("button");
 
 
-                    const numClouds = 15;
+                    const numClouds = 5;
                     // let inputValue = document.getElementById("wish").value;
                     for (let i = 0; i < numClouds; i++) {
                       const cloud = document.createElement('div');
