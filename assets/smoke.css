@@ -22,10 +22,15 @@
       justify-content: center;
       color: #555;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 15px;
       opacity: 0.9;
       animation: float linear infinite;
       pointer-events: none;
+
+      white-space: normal;         /* Cho phép xuống dòng */
+	  word-break: break-word;      /* Ngắt từ nếu dài quá */
+	  overflow: hidden;            /* Vẫn giữ không cho tràn */
+	  text-align: center;
 }
 
 @keyframes float {
@@ -36,3 +41,4 @@
     transform: translateX(110vw);
   }
 }
+

@@ -14310,9 +14310,11 @@ var zL = Object.defineProperty
                     })
                 }
                 praySubmit() {
-                    var val_ten = $("input").val();
                     var val_mongmuon = $("textarea").val();
-                    if (val_ten == "" || val_mongmuon == "") {
+                    if (val_mongmuon.length > 65) {
+                      val_mongmuon = val_mongmuon.slice(0, 65) + '...';
+                    }
+                    if (val_mongmuon == "") {
                         KV().fire("Kiểm tra thông tin", "Bạn chưa nhập thông tin để ước nguyện", "warning");
                         return;
                     }
@@ -14322,7 +14324,6 @@ var zL = Object.defineProperty
                     //     return;
                     // }
                     var myData = {
-                        txtName: val_ten,
                         txtMonguoc: val_mongmuon
                     };
                     // jQuery.ajax({
@@ -14341,22 +14342,20 @@ var zL = Object.defineProperty
                     this.prayForm.reset(),
                     this.setSession()) : KV().fire("Quay l\u1ea1i sau nh\xe9", "B\u1ea1n \u0111\xe3 th\u1eafp h\u01b0\u01a1ng r\u1ed3i, l\u1eddi c\u1ea7u nguy\u1ec7n c\u1ee7a b\u1ea1n c\u0169ng \u0111\xe3 \u0111\u01b0\u1ee3c g\u1eedi \u0111i, ch\xfac b\u1ea1n may m\u1eafn", "success"))
                     $(".blink").remove();
-                    $("<span class='blink'>Mong ước " + val_mongmuon + " của " + val_ten + " đã được gửi!</span>").insertAfter("button");
-
-
-                    const numClouds = 5;
-                    // let inputValue = document.getElementById("wish").value;
+                    const numClouds = 6;
                     for (let i = 0; i < numClouds; i++) {
                       const cloud = document.createElement('div');
                       cloud.className = 'cloud';
-                      cloud.textContent = "A Di Đà Phật !";
-
+                      cloud.textContent = val_mongmuon;
+                      cloud.style.padding = '60px';
+                      cloud.style.paddingTop = '95px';
+                      cloud.style.fontSize = '15px';
+                      cloud.style.zIndex = -1;
                       // Vị trí top ngẫu nhiên
-                      cloud.style.top = Math.random() * 80 + 'vh';
+                      cloud.style.top = Math.random() * 100 + 'vh';
                       // Kích thước ngẫu nhiên
-                      const size = 240 + Math.random() * 60;
-                      cloud.style.width = size + 'px';
-                      cloud.style.height = (size * 0.6) + 'px';
+                      cloud.style.width = '300px';
+                      cloud.style.height = '200px';
                       // Thời gian bay ngẫu nhiên
                       const duration = 20 + Math.random() * 20;
                       cloud.style.animationDuration = duration + 's';
@@ -14403,8 +14402,8 @@ var zL = Object.defineProperty
                         return r.praySubmit()
                     }),
                     jt(14, "div", 14),
-                    Ar(15, "input", 15),
-                    Ht(),
+                    // Ar(15, "input", 15),
+                    // Ht(),
                     Ar(15, "textarea", 15),
                     Ht(),
                     jt(16, "button", 16),
