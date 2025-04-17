@@ -14363,6 +14363,14 @@ var zL = Object.defineProperty
                       cloud.style.animationDelay = (-Math.random() * duration) + 's';
                       document.body.appendChild(cloud);
                     }
+                    const textarea = document.getElementsByTagName('textarea')[0];
+                    if (textarea) {
+                      textarea.style.display = 'none';
+                    }
+                    const btn = document.getElementsByTagName('button')[0]; // nút đầu tiên
+                    if (btn) {
+                      btn.style.display = 'none';
+                    }
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth' // hoặc 'auto' nếu không muốn hiệu ứng mượt
