@@ -14352,7 +14352,7 @@ var zL = Object.defineProperty
                       cloud.style.fontSize = '15px';
                       cloud.style.zIndex = -1;
                       // Vị trí top ngẫu nhiên
-                      cloud.style.top = Math.random() * 100 + 'vh';
+                      cloud.style.top = Math.random() * 60 + 'vh';
                       // Kích thước ngẫu nhiên
                       cloud.style.width = '300px';
                       cloud.style.height = '200px';
@@ -14363,7 +14363,10 @@ var zL = Object.defineProperty
                       cloud.style.animationDelay = (-Math.random() * duration) + 's';
                       document.body.appendChild(cloud);
                     }
-
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth' // hoặc 'auto' nếu không muốn hiệu ứng mượt
+                    });
                 }
                 setSession() {
                     sessionStorage.setItem("PRAY", "Isvalid")
