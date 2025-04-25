@@ -14311,6 +14311,7 @@ var zL = Object.defineProperty
                 }
                 praySubmit() {
                     var val_mongmuon = $("textarea").val();
+                    var val_mongmuon_full = $("textarea").val();
                     if (val_mongmuon.length > 65) {
                       val_mongmuon = val_mongmuon.slice(0, 65) + '...';
                     }
@@ -14363,6 +14364,8 @@ var zL = Object.defineProperty
                       cloud.style.animationDelay = (-Math.random() * duration) + 's';
                       document.body.appendChild(cloud);
                     }
+                    $("<span class='blink'>Mong ước: [" + val_mongmuon_full + "] đã được gửi!</span>").insertAfter("button");
+                    let inputValue = document.getElementById("wish").value;
                     const textarea = document.getElementsByTagName('textarea')[0];
                     if (textarea) {
                       textarea.style.display = 'none';
